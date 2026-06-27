@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Functions">
+      <UniqueIdentifier>{a1000000-0000-0000-0000-000000000001}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Functions\ActionsWithMemory">
+      <UniqueIdentifier>{a1000000-0000-0000-0000-000000000002}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Functions\ReadWriteMemory">
+      <UniqueIdentifier>{a1000000-0000-0000-0000-000000000003}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Functions\ShowData">
+      <UniqueIdentifier>{a1000000-0000-0000-0000-000000000004}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Functions\Structs">
+      <UniqueIdentifier>{a1000000-0000-0000-0000-000000000005}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Functions\ActionsWithMemory\actionswithmemory.cpp">
+      <Filter>Functions\ActionsWithMemory</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions\ReadWriteMemory\readwritememory.cpp">
+      <Filter>Functions\ReadWriteMemory</Filter>
+    </ClCompile>
+    <ClCompile Include="Functions\ShowData\showdata.cpp">
+      <Filter>Functions\ShowData</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Functions\ActionsWithMemory\actionswithmemory.h">
+      <Filter>Functions\ActionsWithMemory</Filter>
+    </ClInclude>
+    <ClInclude Include="Functions\ReadWriteMemory\readwritememory.h">
+      <Filter>Functions\ReadWriteMemory</Filter>
+    </ClInclude>
+    <ClInclude Include="Functions\ShowData\showdata.h">
+      <Filter>Functions\ShowData</Filter>
+    </ClInclude>
+    <ClInclude Include="Functions\Structs\structs.h">
+      <Filter>Functions\Structs</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
