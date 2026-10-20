@@ -1,0 +1,8 @@
+* text=auto
+
+# Файлы Visual Studio всегда с CRLF
+*.sln             text eol=crlf
+*.vcxproj         text eol=crlf
+*.vcxproj.filters text eol=crlf
+
+*.exe binary
