@@ -73,21 +73,31 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="src\core\AddressFile.cpp" />
     <ClCompile Include="src\core\Freezer.cpp" />
+    <ClCompile Include="src\core\Pointer.cpp" />
+    <ClCompile Include="src\core\PointerScanner.cpp" />
     <ClCompile Include="src\core\Process.cpp" />
     <ClCompile Include="src\core\Scanner.cpp" />
+    <ClCompile Include="src\core\Table.cpp" />
     <ClCompile Include="src\core\Value.cpp" />
     <ClCompile Include="src\ui\Input.cpp" />
     <ClCompile Include="src\ui\Menu.cpp" />
+    <ClCompile Include="src\ui\PointerMenu.cpp" />
+    <ClCompile Include="src\ui\TableMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\core\AddressFile.h" />
     <ClInclude Include="src\core\Freezer.h" />
+    <ClInclude Include="src\core\Pointer.h" />
+    <ClInclude Include="src\core\PointerScanner.h" />
     <ClInclude Include="src\core\Process.h" />
     <ClInclude Include="src\core\Scanner.h" />
+    <ClInclude Include="src\core\Table.h" />
     <ClInclude Include="src\core\Value.h" />
     <ClInclude Include="src\core\Win.h" />
     <ClInclude Include="src\ui\Input.h" />
     <ClInclude Include="src\ui\Menu.h" />
+    <ClInclude Include="src\ui\PointerMenu.h" />
+    <ClInclude Include="src\ui\TableMenu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 </Project>

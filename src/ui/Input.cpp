@@ -84,3 +84,29 @@ std::optional<Value> askValue(const std::string& prompt, ValueType type)
         std::printf("'%s' is not a valid %s value\n", line.c_str(), valueTypeName(type));
     }
 }
+
+std::optional<SearchValue> askSearchValue(const std::string& prompt, ValueType type)
+{
+    for (;;) {
+        const std::string line = askLine(prompt.c_str());
+        if (line.empty())
+            return std::nullopt;
+
+        const std::optional<SearchValue> value = parseSearchValue(type, line);
+        if (value)
+            return value;
+        std::printf("'%s' is not a valid %s value\n", line.c_str(), valueTypeName(type));
+    }
+}
+
+ValueType askValueType()
+{
+    std::puts("\nData type:");
+    std::puts("1. short  (2 bytes)");
+    std::puts("2. int    (4 bytes)");
+    std::puts("3. float  (4 bytes)");
+    std::puts("4. double (8 bytes)");
+    std::puts("5. byte   (1 byte)");
+    std::puts("6. int64  (8 bytes)");
+    return *valueTypeFromInt(static_cast<int>(askNumber("Type: ", 1, kValueTypeCount)));
+}

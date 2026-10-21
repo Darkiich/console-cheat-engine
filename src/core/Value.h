@@ -13,10 +13,17 @@ enum class ValueType : int {
     Int = 2, // 4 байта
     Float = 3, // 4 байта
     Double = 4, // 8 байт
+    Byte = 5, // 1 байт
+    Int64 = 6, // 8 байт
 };
+
+constexpr int kValueTypeCount = 6;
 
 // Тип данных выбранный из меню. Возвращает значение в типе ValueType.
 std::optional<ValueType> valueTypeFromInt(int number);
+
+// Тип по названию ("int" -> Int), для файла таблицы.
+std::optional<ValueType> valueTypeFromName(const std::string& name);
 
 size_t valueSize(ValueType type); // Возвращает размер выбранного значения уже в байтах.
 const char* valueTypeName(ValueType type); // Возвращает название типа данных - "int", "float"
@@ -59,6 +66,24 @@ bool valuesEqual(T a, T b)
 
 // Разбирает ввод пользователя в значение нужного типа.
 std::optional<Value> parseValue(ValueType type, const std::string& text);
+
+// Что ищем.
+struct SearchValue {
+    Value value;
+    double tolerance = 0.0;
+};
+
+std::optional<SearchValue> parseSearchValue(ValueType type, const std::string& text);
+
+// Целые сравниваем точно, дробные с допуском.
+template <typename T>
+bool searchMatches(T value, const SearchValue& search)
+{
+    if constexpr (std::is_floating_point_v<T>)
+        return std::fabs(static_cast<double>(value) - static_cast<double>(search.value.as<T>())) < search.tolerance;
+    else
+        return value == search.value.as<T>();
+}
 
 // Формируем строку из значения.
 std::string formatValue(ValueType type, const Value& value, bool roundTrip = false);

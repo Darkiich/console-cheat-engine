@@ -21,3 +21,9 @@ std::optional<size_t> askIndex(size_t count);
 
 // Значение указанного типа.
 std::optional<Value> askValue(const std::string& prompt, ValueType type);
+
+// Значение для поиска.
+std::optional<SearchValue> askSearchValue(const std::string& prompt, ValueType type);
+
+// Выбор типа из меню.
+ValueType askValueType();

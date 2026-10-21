@@ -19,10 +19,19 @@
     <ClCompile Include="src\core\Freezer.cpp">
       <Filter>src\core</Filter>
     </ClCompile>
+    <ClCompile Include="src\core\Pointer.cpp">
+      <Filter>src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\PointerScanner.cpp">
+      <Filter>src\core</Filter>
+    </ClCompile>
     <ClCompile Include="src\core\Process.cpp">
       <Filter>src\core</Filter>
     </ClCompile>
     <ClCompile Include="src\core\Scanner.cpp">
+      <Filter>src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\Table.cpp">
       <Filter>src\core</Filter>
     </ClCompile>
     <ClCompile Include="src\core\Value.cpp">
@@ -34,6 +43,12 @@
     <ClCompile Include="src\ui\Menu.cpp">
       <Filter>src\ui</Filter>
     </ClCompile>
+    <ClCompile Include="src\ui\PointerMenu.cpp">
+      <Filter>src\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ui\TableMenu.cpp">
+      <Filter>src\ui</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\core\AddressFile.h">
@@ -42,10 +57,19 @@
     <ClInclude Include="src\core\Freezer.h">
       <Filter>src\core</Filter>
     </ClInclude>
+    <ClInclude Include="src\core\Pointer.h">
+      <Filter>src\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\PointerScanner.h">
+      <Filter>src\core</Filter>
+    </ClInclude>
     <ClInclude Include="src\core\Process.h">
       <Filter>src\core</Filter>
     </ClInclude>
     <ClInclude Include="src\core\Scanner.h">
+      <Filter>src\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\Table.h">
       <Filter>src\core</Filter>
     </ClInclude>
     <ClInclude Include="src\core\Value.h">
@@ -58,6 +82,12 @@
       <Filter>src\ui</Filter>
     </ClInclude>
     <ClInclude Include="src\ui\Menu.h">
+      <Filter>src\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\PointerMenu.h">
+      <Filter>src\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ui\TableMenu.h">
       <Filter>src\ui</Filter>
     </ClInclude>
   </ItemGroup>

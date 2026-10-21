@@ -1,6 +1,8 @@
 #pragma once
 #include <cstddef>
 #include <cstdint>
+#include <memory>
+#include <string>
 #include <vector>
 
 #include "core/Process.h"
@@ -12,10 +14,15 @@ struct ScanHit {
     Value previous;
 };
 
+class MemorySnapshot;
+
 // Результаты скана.
 struct ScanResults {
     ValueType type = ValueType::Int;
     std::vector<ScanHit> hits;
+    std::shared_ptr<MemorySnapshot> snapshot;
+
+    size_t count() const;
 };
 
 // Просто пункты меню для Next Scan'а.
@@ -33,8 +40,12 @@ struct ScanStats {
     size_t bytes = 0; // сколько байт удалось прочитать
     size_t readCalls = 0; // сколько раз вызван ReadProcessMemory
     double milliseconds = 0.0;
+    std::string error; // не пусто, если не получилось
 };
 
-ScanStats firstScan(const Process& process, ValueType type, const Value& target, ScanResults& out);
+ScanStats firstScan(const Process& process, ValueType type, const SearchValue& target, ScanResults& out);
 
-ScanStats nextScan(const Process& process, NextScanKind kind, const Value& compare, ScanResults& results);
+// Unknown initial value - запоминаем всю память.
+ScanStats firstScanUnknown(const Process& process, ValueType type, ScanResults& out);
+
+ScanStats nextScan(const Process& process, NextScanKind kind, const SearchValue& compare, ScanResults& results);
